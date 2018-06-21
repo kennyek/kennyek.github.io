@@ -1,2 +1,3 @@
-# portfolio-app
-A portfolio site build with React and TypeScript.
+# Kenny Ek's portfolio
+
+My portfolio site. Build with React and TypeScript.
