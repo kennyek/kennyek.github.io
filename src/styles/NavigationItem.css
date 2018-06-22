@@ -1,0 +1,9 @@
+.NavigationItem {
+  display: inline-flex;
+  list-style-type: none;
+  background-color: #f3f;
+}
+
+.NavigationItem + .NavigationItem {
+  margin-left: 10px;
+}
