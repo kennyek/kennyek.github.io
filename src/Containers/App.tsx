@@ -13,26 +13,26 @@ class App extends React.Component<{}, IState> {
   constructor(props: {}) {
     super(props);
     this.state = { page: 'index' };
-
-    this.handleClick = this.handleClick.bind(this);
   }
 
   public render() {
     const page = this.state.page;
-    const pages = ['Start', 'Contact']
+    const pages = [
+      'Start',
+      'CV',
+      'School Projects',
+      'Private Projects',
+      'Contact'
+    ]
 
     return (
       <div className="App">
         <Header />
-        <Navigation currentPage={page} onClick={this.handleClick} pages={pages} />
+        <Navigation currentPage={page} pages={pages} />
         <Main page={page} />
         <Footer />
       </div>
     )
-  }
-
-  private handleClick(page: string) {
-    this.setState({ page });
   }
 }
 

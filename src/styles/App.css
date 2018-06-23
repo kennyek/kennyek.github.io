@@ -9,7 +9,7 @@
     "main"
     "footer";
 
-  width: 95%;
+  width: 960px;
   margin: 0 auto;
 
   background-color: #000;
@@ -29,4 +29,10 @@
 
 .App .Footer {
   grid-area: footer;
+}
+
+@media screen and (max-width: 960px) {
+  .App {
+    width: 95%;
+  }
 }

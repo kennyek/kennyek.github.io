@@ -1,21 +1,20 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/NavigationItem.css';
 
 interface IProps {
-  onClick: (page: string) => void;
   page: string;
 }
 
 const NavigationItem: React.StatelessComponent<IProps> = props => {
-  function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
-    if (!event.currentTarget.textContent) { return; }
-
-    props.onClick(event.currentTarget.textContent.toLowerCase());
-  }
+  const lowerCasePath = props.page.toLowerCase();
+  const path = lowerCasePath === 'start' ? '' : lowerCasePath.replace(/\s/g, '_');
 
   return (
     <li className="NavigationItem">
-      <button onClick={handleClick}>{props.page}</button>
+      <Link className="NavigationItem-link" to={path}>
+        {props.page}
+      </Link>
     </li>
   );
 }
