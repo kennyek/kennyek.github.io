@@ -1,22 +1,20 @@
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import '../styles/Main.css';
-import ContactPage from './Pages/ContactPage';
-import CvPage from './Pages/CvPage';
-import PrivateProjectsPage from './Pages/PrivateProjectsPage';
-import StartPage from './Pages/StartPage';
+import Contact from './Pages/Contact';
+import Cv from './Pages/Cv';
+import PrivateProjects from './Pages/PrivateProjects';
+import SchoolProjects from './Pages/SchoolProjects';
+import Start from './Pages/Start';
 
-interface IProps {
-  page: string;
-}
-
-const Main: React.StatelessComponent<IProps> = props => (
+const Main: React.StatelessComponent<{}> = props => (
   <main className="Main">
     <Switch>
-      <Route path='/' exact={true} component={StartPage} />
-      <Route path='/cv' exact={true} component={CvPage} />
-      <Route path='/private_projects' exact={true} component={PrivateProjectsPage} />
-      <Route path='/contact' exact={true} component={ContactPage} />
+      <Route path='/' exact={true} component={Start} />
+      <Route path='/cv' exact={true} component={Cv} />
+      <Route path='/projects/school' exact={true} component={SchoolProjects} />
+      <Route path='/projects/private' exact={true} component={PrivateProjects} />
+      <Route path='/contact' exact={true} component={Contact} />
     </Switch>
   </main>
 );

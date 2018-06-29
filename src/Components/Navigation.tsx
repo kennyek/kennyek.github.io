@@ -1,13 +1,12 @@
 import * as React from 'react';
 import '../styles/Navigation.css';
-import NavigationItem from './NavigationItem';
+import NavigationItem, { IPage } from './NavigationItem';
 
-interface IProps {
-  currentPage: string;
-  pages: string[];
+interface INavigationProps {
+  pages: IPage[];
 }
 
-const Navigation: React.StatelessComponent<IProps> = props => (
+const Navigation: React.StatelessComponent<INavigationProps> = props => (
   <nav className="Navigation">
     <ul className="Navigation-list">
       {props.pages.map((page, index) =>
@@ -18,3 +17,4 @@ const Navigation: React.StatelessComponent<IProps> = props => (
 );
 
 export default Navigation;
+export { INavigationProps };

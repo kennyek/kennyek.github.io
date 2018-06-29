@@ -3,33 +3,48 @@ import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 import Main from '../Components/Main';
 import Navigation from '../Components/Navigation';
+import { IPage } from '../Components/NavigationItem';
 import '../styles/App.css';
 
+const pages: IPage[] = [
+  {
+    name: 'Start',
+    path: '/'
+  },
+  {
+    name: 'CV',
+    path: '/cv'
+  },
+  {
+    name: 'School Projects',
+    path: '/projects/school'
+  },
+  {
+    name: 'Private Projects',
+    path: '/projects/private'
+  },
+  {
+    name: 'Contact',
+    path: '/contact'
+  }
+];
+
 interface IState {
-  page: string;
+  page: IPage;
 }
 
 class App extends React.Component<{}, IState> {
   constructor(props: {}) {
     super(props);
-    this.state = { page: 'index' };
+    this.state = { page: pages[0] };
   }
 
   public render() {
-    const page = this.state.page;
-    const pages = [
-      'Start',
-      'CV',
-      'School Projects',
-      'Private Projects',
-      'Contact'
-    ]
-
     return (
       <div className="App">
         <Header />
-        <Navigation currentPage={page} pages={pages} />
-        <Main page={page} />
+        <Navigation pages={pages} />
+        <Main />
         <Footer />
       </div>
     )

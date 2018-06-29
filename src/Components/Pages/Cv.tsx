@@ -1,114 +1,114 @@
 import * as React from 'react';
-import '../../styles/CvPage.css';
-import CvPageListItem from './CvPage/CvPageListItem';
+import '../../styles/Cv.css';
+import CvListItem from './Cv/CvListItem';
 
-const CvPage: React.StatelessComponent<{}> = props => (
-  <>
-    <h2>Education</h2>
-    <p><strong>Web Development Programme 120hp (2017 - 2019)</strong></p>
-    <p>
+const Cv: React.StatelessComponent<{}> = props => (
+  <div className="Cv">
+    <h2 className="Cv-heading-2">Education</h2>
+    <p className="Cv-paragraph"><strong>Web Development Programme 120hp (2017 - 2019)</strong></p>
+    <p className="Cv-paragraph">
       Courses in JavaScript (both client and server), PHP, HTML, CSS,
       object-oriented programming with C#, object-oriented analysis and design,
       software quality, software testing, database theory, and programming for
       the web.
     </p>
 
-    <h2>Languages I've worked with</h2>
-    <ul className="CvPage-list">
-      <CvPageListItem
+    <h2 className="Cv-heading-2">Languages I've worked with</h2>
+    <ul className="Cv-list">
+      <CvListItem
         text="JavaScript"
         url="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
       />
-      <CvPageListItem
+      <CvListItem
         text="TypeScript"
         url="https://typescriptlang.org"
       />
-      <CvPageListItem
+      <CvListItem
         text="NodeJs"
         url="https://nodejs.org/en/about/"
       />
-      <CvPageListItem
+      <CvListItem
         text="C#"
         url="https://docs.microsoft.com/sv-se/dotnet/csharp/tour-of-csharp/index"
       />
-      <CvPageListItem
+      <CvListItem
         text="HTML"
         url="https://developer.mozilla.org/en-US/docs/Web/HTML"
       />
-      <CvPageListItem
+      <CvListItem
         text="CSS"
         url="https://developer.mozilla.org/en-US/docs/Web/CSS"
       />
-      <CvPageListItem
+      <CvListItem
         text="SASS"
         url="https://sass-lang.com"
       />
-      <CvPageListItem
+      <CvListItem
         text="Markdown"
         url="https://guides.github.com/features/mastering-markdown/#what"
       />
     </ul>
 
-    <h2>Frameworks/Techniques I've used</h2>
-    <ul className="CvPage-list">
-      <CvPageListItem
+    <h2 className="Cv-heading-2">Frameworks/Techniques I've used</h2>
+    <ul className="Cv-list">
+      <CvListItem
         text="ExpressJs"
         url="https://expressjs.com"
       />
-      <CvPageListItem
+      <CvListItem
         text="React"
         url="https://reactjs.org"
       />
-      <CvPageListItem
+      <CvListItem
         text="Socket.IO"
         url="https://socket.io"
       />
-      <CvPageListItem
+      <CvListItem
         text="MongoDb"
         url="https://mongodb.com/what-is-mongodb"
       />
-      <CvPageListItem
+      <CvListItem
         text="Git"
         url="https://git-scm.com"
       />
-      <CvPageListItem
+      <CvListItem
         text="Github"
         url="https://github.com"
       />
-      <CvPageListItem
+      <CvListItem
         text="Dotnet Core"
         url="https://docs.microsoft.com/en-us/dotnet/core/"
       />
-      <CvPageListItem
+      <CvListItem
         text="JekyllRb"
         url="https://jekyllrb.com"
       />
-      <CvPageListItem
+      <CvListItem
         text="Nginx"
         url="https://nginx.com/resources/glossary/nginx/"
       />
-      <CvPageListItem
+      <CvListItem
         text="PM2"
         url="http://pm2.keymetrics.io/docs/usage/pm2-doc-single-page/"
       />
-      <CvPageListItem
+      <CvListItem
         text="Unity3D"
         url="https://unity3d.com/unity"
       />
     </ul>
 
-    <h2>Additional experience</h2>
-    <ul className="CvPage-list">
-      <CvPageListItem
+    <h2 className="Cv-heading-2">Additional experience</h2>
+    <ul className="Cv-list">
+      <CvListItem
         text="UML"
         url="http://uml.org/what-is-uml.htm"
       />
-      <CvPageListItem
+      <CvListItem
         text="Scrum"
         url="https://scrum.org/resources/what-is-scrum"
       />
     </ul>
-  </>
+  </div>
 );
 
-export default CvPage;
+export default Cv;
