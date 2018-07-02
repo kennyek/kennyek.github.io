@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '../../styles/SchoolProjects.css';
+import './SchoolProjects.css';
 
 const SchoolProjects: React.StatelessComponent<{}> = props => (
   <p className="SchoolProjects">

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '../../styles/Contact.css';
+import './Contact.css';
 
 const Contact: React.StatelessComponent<{}> = props => (
   <div className="Contact">

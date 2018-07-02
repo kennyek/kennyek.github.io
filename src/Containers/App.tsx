@@ -1,29 +1,36 @@
 import * as React from 'react';
+import { IoDocumentText, IoEmail, IoHome, IoStar } from 'react-icons/lib/io';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 import Main from '../Components/Main';
 import Navigation from '../Components/Navigation';
 import { IPage } from '../Components/NavigationItem';
-import '../styles/App.css';
+import './App.css';
 
+const iconSize = 20;
 const pages: IPage[] = [
   {
+    icon: <IoHome size={iconSize} />,
     name: 'Start',
     path: '/'
   },
   {
+    icon: <IoDocumentText size={iconSize} />,
     name: 'CV',
     path: '/cv'
   },
   {
+    icon: <IoStar size={iconSize} />,
     name: 'School Projects',
     path: '/projects/school'
   },
   {
+    icon: <IoStar size={iconSize} />,
     name: 'Private Projects',
     path: '/projects/private'
   },
   {
+    icon: <IoEmail size={iconSize} />,
     name: 'Contact',
     path: '/contact'
   }

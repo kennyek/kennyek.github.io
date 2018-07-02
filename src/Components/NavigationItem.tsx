@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/NavigationItem.css';
+import './NavigationItem.css';
 
 interface IPage {
   name: string;
   path: string;
+  icon?: any;
 }
 
 interface INavigationItemProps {
@@ -14,7 +15,8 @@ interface INavigationItemProps {
 const NavigationItem: React.StatelessComponent<INavigationItemProps> = props => (
   <li className="NavigationItem">
     <Link className="NavigationItem-link" to={props.page.path}>
-      {props.page.name}
+      {props.page.icon && props.page.icon}
+      {` ${props.page.name}`}
     </Link>
   </li>
 );

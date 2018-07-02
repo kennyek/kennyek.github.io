@@ -1,5 +1,5 @@
 import * as React from "react";
-import '../styles/Header.css';
+import './Header.css';
 
 const Header: React.StatelessComponent = props => (
   <header className="Header">

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '../../styles/Cv.css';
+import './Cv.css';
 import CvListItem from './Cv/CvListItem';
 
 const Cv: React.StatelessComponent<{}> = props => (

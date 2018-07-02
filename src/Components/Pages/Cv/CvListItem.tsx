@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '../../../styles/CvListItem.css';
+import './CvListItem.css';
 
 interface IProps {
   text: string;

@@ -1,5 +1,5 @@
 import * as React from "react";
-import '../styles/Footer.css';
+import './Footer.css';
 
 const Footer: React.StatelessComponent = props => (
   <footer className="Footer">

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '../../styles/Start.css';
+import './Start.css';
 
 const Start: React.StatelessComponent<{}> = props => (
   <div className="Start">

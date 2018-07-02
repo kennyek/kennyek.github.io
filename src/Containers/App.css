@@ -1,9 +1,14 @@
 .App {
-  display: grid;
-  grid-template-rows: 150px 50px auto 50px;
-  grid-template-columns: auto;
+  --navigation-height: 40px;
 
-  grid-template-areas: 
+  display: grid;
+  grid-template-rows:
+    90px
+    var(--navigation-height)
+    auto
+    var(--navigation-height);
+  grid-template-columns: auto;
+  grid-template-areas:
     "header"
     "navigation"
     "main"

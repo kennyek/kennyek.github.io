@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import '../styles/Main.css';
+import './Main.css';
 import Contact from './Pages/Contact';
 import Cv from './Pages/Cv';
 import PrivateProjects from './Pages/PrivateProjects';

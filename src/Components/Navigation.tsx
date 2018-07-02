@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '../styles/Navigation.css';
+import './Navigation.css';
 import NavigationItem, { IPage } from './NavigationItem';
 
 interface INavigationProps {
