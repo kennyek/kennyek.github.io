@@ -1,13 +1,14 @@
 import * as React from 'react';
+import { IWithClasses } from '../../../globalInterfaces';
 import './Navigation.css';
 import NavigationItem, { IPage } from './NavigationItem';
 
-interface INavigationProps {
+interface INavigationProps extends IWithClasses {
   pages: IPage[];
 }
 
 const Navigation: React.StatelessComponent<INavigationProps> = props => (
-  <nav className="Navigation">
+  <nav className={`${props.classes && props.classes + ' '}Navigation`}>
     <ul className="Navigation-list">
       {props.pages.map((page, index) =>
         <NavigationItem key={index} page={page} />)
@@ -18,3 +19,4 @@ const Navigation: React.StatelessComponent<INavigationProps> = props => (
 
 export default Navigation;
 export { INavigationProps };
+

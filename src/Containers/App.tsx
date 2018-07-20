@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { IoDocumentText, IoEmail, IoHome, IoStar } from 'react-icons/lib/io';
-import Footer from '../Components/Footer';
-import Header from '../Components/Header';
-import Main from '../Components/Main';
-import Navigation from '../Components/Navigation';
-import { IPage } from '../Components/NavigationItem';
+import Footer from '../Components/Layout/Footer';
+import Header from '../Components/Layout/Header';
+import Main from '../Components/Layout/Main';
+import Navigation from '../Components/Layout/Navigation';
+import { IPage } from '../Components/Layout/Navigation/NavigationItem';
 import './App.css';
 
 const iconSize = 20;
@@ -49,10 +49,10 @@ class App extends React.Component<{}, IState> {
   public render() {
     return (
       <div className="App">
-        <Header />
-        <Navigation pages={pages} />
-        <Main />
-        <Footer />
+        <Header classes="header" />
+        <Navigation classes="navigation" pages={pages} />
+        <Main classes="main" />
+        <Footer classes="footer" />
       </div>
     )
   }
