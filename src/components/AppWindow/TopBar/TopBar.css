@@ -1,0 +1,23 @@
+.TopBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    width: 100%;
+    height: var(--appwindow-topbar-height);
+    
+    box-sizing: border-box;
+    padding: 0 5px;
+    
+    background-color: var(--appwindow-topbar-background-color);
+    color: var(--appwindow-topbar-foreground-color);
+}
+
+.TopBar-title {
+    margin: 0;
+    font-weight: bold;
+}
+
+.TopBar-close-button {
+    cursor: pointer;
+}

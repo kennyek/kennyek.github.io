@@ -1,0 +1,21 @@
+:root {
+    --appwindow-main-background-color: #2f303d;
+    --appwindow-main-foreground-color: #d9dadd;
+
+    --appwindow-main-anchor-color: #99f;
+    --appwindow-main-anchor-hover-color: #f44;
+    --appwindow-main-anchor-active-color: #4f4;
+    
+    --appwindow-topbar-background-color: #515866;
+    --appwindow-topbar-foreground-color: #fdfdfd;
+    --appwindow-topbar-height: 30px;
+}
+
+.AppWindow {
+    /* REMOVE Positions */
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    width: 400px;
+    height: 300px;
+}

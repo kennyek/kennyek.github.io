@@ -1,0 +1,14 @@
+.App {
+    height: 100%;
+
+    background: image-set(
+        url(/images/background-image-1366x769.jpg) 1x,
+        url(/images/background-image-1920x1080.jpg) 2x,
+        url(/images/background-image-full.jpg) 3x
+    );
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: cover;
+
+    z-index: -100;
+}

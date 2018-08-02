@@ -1,14 +1,25 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import App from './Containers/App';
+import { Provider } from 'react-redux';
+import App from 'src/containers/App';
+import registerServiceWorker from 'src/registerServiceWorker';
+import store from 'src/store';
 import './index.css';
-import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById('root') as HTMLElement
-);
+/**
+ * Wrapper for the React.DOM render execution. In order to be able to subscribe
+ * to the Redux store.
+ */
+function render() {
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById('root') as HTMLElement
+  );
+}
+
+render();
+store.subscribe(render);
+
 registerServiceWorker();

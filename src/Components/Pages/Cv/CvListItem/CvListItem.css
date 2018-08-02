@@ -1,7 +1,0 @@
-.CvListItem {
-  list-style-type: none;
-}
-
-.CvListItem-link:hover {
-  filter: brightness(40%);
-}

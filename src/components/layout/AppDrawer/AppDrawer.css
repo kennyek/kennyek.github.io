@@ -1,0 +1,24 @@
+:root {
+    --app-drawer-vertical-distance: 25%;
+    --app-drawer-width: 40px;
+}
+
+.AppDrawer {
+    position: absolute;
+    
+    /* Center vertically */
+    top: 50%;
+    transform: translateY(-50%);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: var(--app-drawer-width);
+    height: fit-content;
+
+    border: 0.5px solid #000000;
+    
+    background-color: var(--primary-color);
+    z-index: 2147483647; /* Above everything */
+}

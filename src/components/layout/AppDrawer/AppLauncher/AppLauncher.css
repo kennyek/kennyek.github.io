@@ -1,0 +1,31 @@
+:root {
+    --app-launcher-icon-margin: 5px;
+    --app-launcher-transition-duration: 150ms;
+}
+
+.AppLauncher {
+    width: calc(var(--app-drawer-width) - (2 * var(--app-launcher-icon-margin)));
+    height: calc(var(--app-drawer-width) - (2 * var(--app-launcher-icon-margin)));
+
+    margin: var(--app-launcher-icon-margin) 0;
+
+    border: 0.5px solid black;
+    border-radius: 30%;
+
+    background-color: var(--secondary-color);
+    color: var(--foreground-color);
+    cursor: pointer;
+    transition:
+        transform var(--app-launcher-transition-duration),
+        filter var(--app-launcher-transition-duration);
+}
+
+.AppLauncher:hover {
+    transform: scale(1.3) translate(5px);
+    filter: brightness(120%);
+}
+
+.AppLauncher-icon {
+    width: 100%;
+    height: 100%;
+}

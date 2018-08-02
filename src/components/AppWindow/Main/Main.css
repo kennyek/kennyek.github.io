@@ -1,0 +1,29 @@
+.Main {
+    width: 100%;
+    height: calc(100% - var(--appwindow-topbar-height));
+
+    box-sizing: border-box;
+    padding: 10px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: var(--appwindow-main-background-color);
+    color: var(--appwindow-main-foreground-color);
+}
+
+/* .Main p {
+    margin-top: 0;
+    margin-bottom: 0;
+} */
+
+.Main a {
+    color: var(--appwindow-main-anchor-color);
+}
+
+.Main a:hover {
+    color: var(--appwindow-main-anchor-hover-color);
+}
+
+.Main a:active {
+    color: var(--appwindow-main-anchor-active-color);
+}
