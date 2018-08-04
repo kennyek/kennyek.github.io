@@ -2,6 +2,15 @@
 
 My portfolio site. Build with React and TypeScript.
 
+## TODO
+
+* [ ] Fix selected applications should display on top
+* [ ] Fix applications should not be able to be dragged outside of page borders
+* [ ] Fix multiple applications having same icon (private/school projects)
+* [ ] Add ability to see application name rather than just icon
+* [ ] Change style of text and lists in AppWindow
+* [ ] Change to nicer background image
+
 ## Assets usage
 
 | Asset            | Source                                                    |
