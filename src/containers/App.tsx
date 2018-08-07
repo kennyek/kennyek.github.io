@@ -82,12 +82,33 @@ const App: StatelessComponent<Props> = props => {
 
     const dragData: IDragData = JSON.parse(event.dataTransfer.getData('text'));
 
-    const { clientXWhenDragStarted, clientYWhenDragStarted, id } = dragData;
+    const {
+      applicationWindowHeight,
+      applicationWindowWidth,
+      clientXWhenDragStarted,
+      clientYWhenDragStarted,
+      id
+    } = dragData;
     const { clientX, clientY } = event;
     const { xPosition, yPosition } = props.applications[id];
 
-    const newXPosition = xPosition + (clientX - clientXWhenDragStarted);
-    const newYPosition = yPosition + (clientY - clientYWhenDragStarted);
+    const calculatedXPosition = xPosition + (clientX - clientXWhenDragStarted);
+    const calculatedYPosition = yPosition + (clientY - clientYWhenDragStarted);
+
+    const pageWidth = event.currentTarget.offsetWidth;
+    const pageHeight = event.currentTarget.offsetHeight;
+
+    const newXPosition = calculatedXPosition < 0
+      ? 0
+      : calculatedXPosition + applicationWindowWidth > pageWidth
+        ? pageWidth - applicationWindowWidth
+        : calculatedXPosition;
+
+    const newYPosition = calculatedYPosition < 0
+      ? 0
+      : calculatedYPosition + applicationWindowHeight > pageHeight
+        ? pageHeight - applicationWindowHeight
+        : calculatedYPosition;
 
     props.updateApplicationPosition(id, newXPosition, newYPosition);
   }

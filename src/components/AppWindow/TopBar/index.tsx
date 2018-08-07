@@ -9,6 +9,12 @@ import './TopBar.css';
 
 /** Data passed as JSON in the drag events. */
 export interface IDragData {
+  /** The height of the ApplicationWindow. */
+  applicationWindowHeight: number;
+
+  /** The width of the ApplicationWindow. */
+  applicationWindowWidth: number;
+
   /** The horizontal mouse position when the dragging starts. */
   clientXWhenDragStarted: number;
 
@@ -75,6 +81,8 @@ const TopBar: StatelessComponent<Props> = props => {
     const clientYWhenDragStarted = event.clientY;
 
     const dragData: IDragData = {
+      applicationWindowHeight: event.currentTarget.parentElement!.offsetHeight,
+      applicationWindowWidth: event.currentTarget.parentElement!.offsetWidth,
       clientXWhenDragStarted,
       clientYWhenDragStarted,
       id
