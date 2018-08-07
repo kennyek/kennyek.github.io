@@ -3,19 +3,27 @@ import { StatelessComponent } from 'react';
 import { IoDocumentText, IoEmail, IoStar } from 'react-icons/lib/io';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
+import { placeApplicationOnTop, updateApplicationPosition } from 'src/actions';
 import Contact from 'src/components/applications/Contact';
 import Cv from 'src/components/applications/Cv';
 import PrivateProjects from 'src/components/applications/PrivateProjects';
 import SchoolProjects from 'src/components/applications/SchoolProjects';
 import AppWindow from 'src/components/AppWindow';
+import { IDragData } from 'src/components/AppWindow/TopBar';
 import AppDrawer from 'src/components/layout/AppDrawer';
 import { IAppInfo, IState } from 'src/store';
-import { updateApplicationPosition } from '../actions';
-import { IDragData } from '../components/AppWindow/TopBar';
 import './App.css';
 
 /** Dispatch props from Redux. */
 interface IDispatchProps {
+  /**
+   * Dispatches an action to place the application on top of the other
+   * applications.
+   *
+   * @param id The id of the application that should be placed at top.
+   */
+  placeApplicationOnTop: (id: number) => void;
+
   /**
    * Dispatches an action to update an application's position with the provided
    * values.
@@ -89,6 +97,7 @@ const App: StatelessComponent<Props> = props => {
       clientYWhenDragStarted,
       id
     } = dragData;
+
     const { clientX, clientY } = event;
     const { xPosition, yPosition } = props.applications[id];
 
@@ -111,6 +120,7 @@ const App: StatelessComponent<Props> = props => {
         : calculatedYPosition;
 
     props.updateApplicationPosition(id, newXPosition, newYPosition);
+    props.placeApplicationOnTop(id);
   }
 
   return (
@@ -133,6 +143,9 @@ const App: StatelessComponent<Props> = props => {
  */
 function mapDispatchToProps(dispatch: Dispatch) {
   return {
+    placeApplicationOnTop: (id: number) => {
+      dispatch(placeApplicationOnTop(id));
+    },
     updateApplicationPosition: (id: number, xPosition: number, yPosition: number) => {
       dispatch(updateApplicationPosition(id, xPosition, yPosition));
     }

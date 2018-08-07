@@ -22,6 +22,11 @@ export {
   ILaunchApplicationActionPayload
 } from './launchApplication';
 export {
+  placeApplicationOnTop,
+  IPlaceApplicationOnTopAction,
+  IPlaceApplicationOnTopActionPayload
+} from './placeApplicationOnTop';
+export {
   updateApplicationPosition,
   IUpdateApplicationPositionAction,
   IUpdateApplicationPositionActionPayload

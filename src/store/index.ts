@@ -31,6 +31,9 @@ export interface IAppInfo {
 
   /** Describes the position of the top edge of the application. */
   yPosition: number;
+
+  /** Determines which applications displays on top. */
+  zIndex: number;
 }
 
 /**

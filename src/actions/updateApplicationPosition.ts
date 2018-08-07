@@ -6,7 +6,7 @@ import { Actions } from 'src/constants';
  *
  * @export
  * @interface IUpdateApplicationPositionAction
- * @extends {IUpdateApplicationPositionActionPayload}
+ * @extends {IApplicationAction}
  */
 export interface IUpdateApplicationPositionAction extends IApplicationAction {
   /** The body of the action affecting the new position of the application. */

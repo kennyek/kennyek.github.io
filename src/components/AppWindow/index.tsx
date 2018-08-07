@@ -2,7 +2,7 @@ import * as React from 'react';
 import { CSSProperties, StatelessComponent } from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import { closeApplication } from 'src/actions';
+import { closeApplication, placeApplicationOnTop } from 'src/actions';
 import Main from 'src/components/AppWindow/Main';
 import TopBar from 'src/components/AppWindow/TopBar';
 import { IState } from 'src/store';
@@ -12,6 +12,9 @@ import './AppWindow.css';
 interface IDispatchProps {
   /** Dispatches an action to close the application. */
   closeApplication: () => void;
+
+  /** Dispatches an action to place the application on top of the other applications. */
+  placeApplicationOnTop: () => void;
 }
 
 /** The props derived from the Redux store. */
@@ -21,6 +24,9 @@ interface IStateProps {
 
   /** The position of the top edge of the application. */
   yPosition: number;
+
+  /** Determining which application displays on top of each other. */
+  zIndex: number;
 }
 
 /** The props of the AppWindow component. */
@@ -43,7 +49,7 @@ type Props = IAppWindowProps & IDispatchProps & IStateProps;
 
 /** An application window containing a topbar and main window. */
 const AppWindow: StatelessComponent<Props> = props => {
-  const { data, icon, id, name, xPosition, yPosition } = props;
+  const { data, icon, id, name, xPosition, yPosition, zIndex } = props;
 
   /**
    * Close the application if the Escape key was pressed.
@@ -56,13 +62,30 @@ const AppWindow: StatelessComponent<Props> = props => {
     props.closeApplication();
   }
 
+  /**
+   * Place the application on top of the other applications.
+   *
+   * @param event The MouseEvent fired when the user clicks the AppWindow.
+   */
+  function handleClick(event: React.MouseEvent<HTMLDivElement>) {
+    event.stopPropagation();
+    props.placeApplicationOnTop();
+  }
+
   const style: CSSProperties = {
     left: xPosition,
-    top: yPosition
+    top: yPosition,
+    zIndex
   };
 
   return (
-    <div className="AppWindow" style={style} onKeyDown={closeWindow} tabIndex={0}>
+    <div
+      className="AppWindow"
+      style={style}
+      onClick={handleClick}
+      onKeyDown={closeWindow}
+      tabIndex={0}
+    >
       <TopBar icon={icon} id={id} name={name} />
       <Main data={data} />
     </div>
@@ -77,11 +100,12 @@ const AppWindow: StatelessComponent<Props> = props => {
  * @param ownProps The props passed to the component by the parent.
  */
 function mapStateToProps(state: IState, ownProps: IAppWindowProps): IStateProps {
-  const { xPosition, yPosition } = state.applications[ownProps.id];
+  const { xPosition, yPosition, zIndex } = state.applications[ownProps.id];
 
   return {
     xPosition,
-    yPosition
+    yPosition,
+    zIndex
   }
 }
 
@@ -95,6 +119,9 @@ function mapDispatchToProps(dispatch: Dispatch, ownProps: IAppWindowProps) {
   return {
     closeApplication: () => {
       dispatch(closeApplication(ownProps.id));
+    },
+    placeApplicationOnTop: () => {
+      dispatch(placeApplicationOnTop(ownProps.id));
     }
   };
 }

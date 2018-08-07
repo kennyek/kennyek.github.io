@@ -3,8 +3,7 @@ import { StatelessComponent } from 'react';
 import { IoClose } from 'react-icons/lib/io';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import { closeApplication } from 'src/actions/closeApplication';
-import { updateApplicationPosition } from 'src/actions/updateApplicationPosition';
+import { closeApplication, updateApplicationPosition } from 'src/actions';
 import './TopBar.css';
 
 /** Data passed as JSON in the drag events. */
@@ -67,6 +66,7 @@ const TopBar: StatelessComponent<Props> = props => {
    * @param event The click event that occurs when the close button is clicked.
    */
   function handleCloseButtonClick(event: React.MouseEvent<React.ReactSVGElement>) {
+    event.stopPropagation();
     props.closeApplication();
   }
 
